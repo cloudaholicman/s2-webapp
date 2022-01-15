@@ -5,18 +5,33 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "lint:write": "next lint --cache --fix"
   },
   "dependencies": {
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "reset-css": "^5.0.1",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@types/node": "17.0.8",
     "@types/react": "17.0.38",
+    "@types/styled-components": "^5.1.20",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "2.5.1",
     "typescript": "4.5.4"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }
